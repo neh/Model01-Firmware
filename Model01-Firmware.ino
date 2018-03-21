@@ -234,17 +234,17 @@ KEYMAPS(
   [PRIMARY] = KEYMAP_STACKED
   (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, Key_LEDEffectNext,
    Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, ___,
-   Key_PageUp,    Key_A,            Key_O,      Key_E,      Key_U, Key_I,
-   Key_PageDown,  Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
-   ShiftToLayer(FUNCTION), Key_LeftShift, Key_Escape, ___,
-   Key_Tab,
+   Key_LeftAlt,   Key_A,            Key_O,      Key_E,      Key_U, Key_I,
+   Key_Delete,    Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
+   Key_Tab, Key_LeftShift, Key_Escape, ___,
+   ShiftToLayer(FUNCTION),
 
    M(MACRO_ANY),  Key_6, Key_7, Key_8, Key_9, Key_0, LockLayer(NUMPAD),
    ___,           Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
    Key_Enter,     Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   ___,           Key_RightAlt, Key_Spacebar, Key_Backspace,
-   Key_Tab),
+   ___,           Key_Backspace, Key_Spacebar, Key_Tab,
+   ShiftToLayer(FUNCTION)),
 
 #else
 
@@ -259,14 +259,14 @@ KEYMAPS(
    ___,      ___,                        Consumer_VolumeIncrement, Consumer_VolumeDecrement, ___, ___, ___,
    Key_Home, Consumer_ScanPreviousTrack, Key_Mute,                 Consumer_PlaySlashPause,  Consumer_ScanPreviousTrack, ___,
    Key_End,  Key_PrintScreen,            Key_Insert,               ___,                      ___, ___, ___,
-   ___, ___, ___, ___,
+   Key_Tab, ___, ___, ___,
    ___,
 
    ___, Key_F6,        Key_F7,               Key_F8,                Key_F9,          Key_F10,          Key_F11,
    ___, ___,           Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_LeftBracket, Key_RightBracket, Key_F12,
    ___, Key_LeftArrow, Key_DownArrow,        Key_UpArrow,           Key_RightArrow,         ___,
    Key_PcApplication,  ___,                  ___, ___, ___,         Key_Backslash,    Key_Pipe,
-   ___, ___, Key_Enter, Key_Delete,
+   ___, ___, Key_Enter, Key_Tab,
    ___),
 
   // [FUNCTION] =  KEYMAP_STACKED
@@ -551,13 +551,19 @@ void setup() {
   QUKEYS(
     // kaleidoscope::Qukey(0, 1, 7, Key_LeftShift),      // Shift/Enter
     kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
-    kaleidoscope::Qukey(0, 3, 6, Key_LeftGui),        // Control/Escape
-    kaleidoscope::Qukey(0, 3, 9, Key_RightGui),       // Control/Escape
+
+    // kaleidoscope::Qukey(0, 3, 6, Key_LeftGui),
+    // kaleidoscope::Qukey(0, 3, 9, Key_RightGui),
+    kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
+    kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
 
     kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
     kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
-    kaleidoscope::Qukey(0, 2, 4, Key_LeftGui),       // u/Mod4
+    // kaleidoscope::Qukey(0, 2, 4, Key_LeftGui),       // u/Mod4
+
+    //kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
+    //kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
 
     // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),      // S/alt
     // kaleidoscope::Qukey(0, 2, 4, Key_LeftShift)     // F/shift
