@@ -266,7 +266,7 @@ KEYMAPS(
    ___, ___,           Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_LeftBracket, Key_RightBracket, Key_F12,
    ___, Key_LeftArrow, Key_DownArrow,        Key_UpArrow,           Key_RightArrow,         ___,
    Key_PcApplication,  ___,                  ___, ___, ___,         Key_Backslash,    Key_Pipe,
-   ___, ___, Key_Enter, Key_Tab,
+   ___, Key_Delete, Key_Spacebar, Key_Tab,
    ___),
 
   // [FUNCTION] =  KEYMAP_STACKED
