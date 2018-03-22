@@ -32,8 +32,12 @@
 // Support for controlling the keyboard's LEDs
 #include "Kaleidoscope-LEDControl.h"
 
+
 // Support for "Numpad" mode, which is mostly just the Numpad specific LED mode
 // #include "Kaleidoscope-NumPad.h"
+
+// Support for an "LED off mode"
+#include "LED-Off.h"
 
 // Support for the "Boot greeting" effect, which pulses the 'LED' button for 10s
 // when the keyboard is connected to a computer (or that computer is powered on)
@@ -44,9 +48,6 @@
 
 // Support for an LED mode that makes all the LEDs 'breathe'
 #include "Kaleidoscope-LEDEffect-Breathe.h"
-
-// Support for an LED mode that makes a red pixel chase a blue pixel across the keyboard
-// #include "Kaleidoscope-LEDEffect-Chase.h"
 
 // Support for LED modes that pulse the keyboard's LED in a rainbow pattern
 #include "Kaleidoscope-LEDEffect-Rainbow.h"
@@ -74,8 +75,6 @@
 
 // Support for USB quirks, like changing the key state report protocol
 #include "Kaleidoscope-USB-Quirks.h"
-
-// #include "Kaleidoscope-DualUse.h"
 
 // #include "Kaleidoscope-OneShot.h"
 // #include "Kaleidoscope-Escape-OneShot.h"
@@ -234,8 +233,8 @@ KEYMAPS(
   [PRIMARY] = KEYMAP_STACKED
   (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, Key_LEDEffectNext,
    Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, ___,
-   Key_LeftAlt,   Key_A,            Key_O,      Key_E,      Key_U, Key_I,
-   Key_Delete,    Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
+   ___,           Key_A,            Key_O,      Key_E,      Key_U, Key_I,
+   ___,           Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
    Key_Tab, Key_LeftShift, Key_Escape, ___,
    ShiftToLayer(FUNCTION),
 
@@ -511,15 +510,8 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // and slowly moves the rainbow across your keyboard
   LEDRainbowWaveEffect,
 
-  // The chase effect follows the adventure of a blue pixel which chases a red pixel across
-  // your keyboard. Spoiler: the blue pixel never catches the red pixel
-  LEDChaseEffect,
-
+  // These static effects turn your keyboard's LEDs a variety of colors
   &solidOrange, &solidGreen, &solidBlue,
-
-  // The AlphaSquare effect prints each character you type, using your
-  // keyboard's LEDs as a display
-  AlphaSquareEffect,
 
   // The MouseKeys plugin lets you add keys to your keymap which move the mouse.
   MouseKeys,
@@ -549,34 +541,19 @@ void setup() {
   Kaleidoscope.setup();
 
   QUKEYS(
-    // kaleidoscope::Qukey(0, 1, 7, Key_LeftShift),      // Shift/Enter
-    kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
+    // kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
 
-    // kaleidoscope::Qukey(0, 3, 6, Key_LeftGui),
-    // kaleidoscope::Qukey(0, 3, 9, Key_RightGui),
     kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
     kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
 
     kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
     kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
-    // kaleidoscope::Qukey(0, 2, 4, Key_LeftGui),       // u/Mod4
-
-    //kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
-    //kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
-
-    // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),      // S/alt
-    // kaleidoscope::Qukey(0, 2, 4, Key_LeftShift)     // F/shift
+    kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
+    kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
   )
   // Qukeys.setTimeout(250);
-  Qukeys.setReleaseDelay(0);
-
-  // While we hope to improve this in the future, the NumLock plugin
-  // needs to be explicitly told which keymap layer is your numpad layer
-  // NumLock.numPadLayer = NUMPAD;
-
-  // We configure the AlphaSquare effect to use RED letters
-  // AlphaSquare.color = CRGB(255, 0, 0);
+  // Qukeys.setReleaseDelay(5);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
