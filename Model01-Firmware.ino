@@ -235,14 +235,14 @@ KEYMAPS(
    Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, ___,
    ___,           Key_A,            Key_O,      Key_E,      Key_U, Key_I,
    ___,           Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
-   Key_Tab, Key_LeftShift, Key_Escape, ___,
+   Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
    ShiftToLayer(FUNCTION),
 
    M(MACRO_ANY),  Key_6, Key_7, Key_8, Key_9, Key_0, LockLayer(NUMPAD),
    ___,           Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
    Key_Enter,     Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   ___,           Key_Backspace, Key_Spacebar, Key_Tab,
+   Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
    ShiftToLayer(FUNCTION)),
 
 #else
@@ -541,16 +541,16 @@ void setup() {
   Kaleidoscope.setup();
 
   QUKEYS(
-    // kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
+    kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
 
     kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
     kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
 
-    kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
-    kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
+    // kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
+    // kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
-    kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
-    kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
+    // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
+    // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
   )
   // Qukeys.setTimeout(250);
   // Qukeys.setReleaseDelay(5);
