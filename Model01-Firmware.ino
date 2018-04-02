@@ -542,6 +542,7 @@ void setup() {
 
   QUKEYS(
     kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
+    kaleidoscope::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
 
     kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
     kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
