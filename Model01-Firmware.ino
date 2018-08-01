@@ -76,9 +76,9 @@
 // Support for USB quirks, like changing the key state report protocol
 #include "Kaleidoscope-USB-Quirks.h"
 
-// #include "Kaleidoscope-OneShot.h"
+#include "Kaleidoscope-OneShot.h"
 // #include "Kaleidoscope-Escape-OneShot.h"
-// #include "Kaleidoscope-LED-ActiveModColor.h"
+#include "Kaleidoscope-LED-ActiveModColor.h"
 
 #include <Kaleidoscope-Qukeys.h>
 
@@ -231,19 +231,20 @@ KEYMAPS(
 #elif defined (PRIMARY_KEYMAP_CUSTOM)
 
   [PRIMARY] = KEYMAP_STACKED
-  (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, ___,
-   ___,           Key_A,            Key_O,      Key_E,      Key_U, Key_I,
-   ___,           Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
+  (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, ___,
+   Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, Key_Delete,
+   Key_Backslash, Key_A,            Key_O,      Key_E,      Key_U, Key_I,
+   Key_Pipe,      Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
    Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
-   ShiftToLayer(FUNCTION),
+   OSL(FUNCTION),
 
-   M(MACRO_ANY),  Key_6, Key_7, Key_8, Key_9, Key_0, LockLayer(NUMPAD),
-   ___,           Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
+   ___,           Key_6, Key_7, Key_8, Key_9, Key_0, ___,
+   Key_Backspace, Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
    Key_Enter,     Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
    Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
-   ShiftToLayer(FUNCTION)),
+   OSL(FUNCTION)),
+
 
 #else
 
@@ -254,48 +255,32 @@ KEYMAPS(
 
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,                     Key_F2,                   Key_F3,                   Key_F4,                     Key_F5,           XXX,
-   ___,      ___,                        Consumer_VolumeIncrement, Consumer_VolumeDecrement, ___, ___, ___,
-   Key_Home, Consumer_ScanPreviousTrack, Key_Mute,                 Consumer_PlaySlashPause,  Consumer_ScanPreviousTrack, ___,
-   Key_End,  Key_PrintScreen,            Key_Insert,               ___,                      ___, ___, ___,
-   Key_Tab, ___, ___, ___,
+  (___, Key_F1,                     Key_F2,        Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
+   ___, ___,                        ___,           Key_LeftCurlyBracket,    Key_RightCurlyBracket,      ___,                      ___,
+   ___, ___,                        ___,           Key_LeftBracket,         Key_RightBracket,           Consumer_VolumeIncrement,
+   ___, Consumer_ScanPreviousTrack, Key_Mute,      Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
+   ___, ___, ___, ___,
    ___,
 
-   ___, Key_F6,        Key_F7,               Key_F8,                Key_F9,          Key_F10,          Key_F11,
-   ___, ___,           Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_LeftBracket, Key_RightBracket, Key_F12,
-   ___, Key_LeftArrow, Key_DownArrow,        Key_UpArrow,           Key_RightArrow,         ___,
-   Key_PcApplication,  ___,                  ___, ___, ___,         Key_Backslash,    Key_Pipe,
-   ___, Key_Delete, Key_Spacebar, Key_Tab,
+   ___, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
+   ___, ___,        LSHIFT(Key_9), LSHIFT(Key_0),          ___,            ___,            Key_F12,
+        ___,        Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
+   ___, ___,        ___,           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,     
+   ___, ___, ___, ___,
    ___),
 
-  // [FUNCTION] =  KEYMAP_STACKED
-  // (___,      Key_F1,           Key_F2,      Key_F3,     Key_F4,        Key_F5,           XXX,
-  //  Key_Tab,  ___,              Key_mouseUp, ___,        Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
-  //  Key_Home, Key_mouseL,       Key_mouseDn, Key_mouseR, Key_mouseBtnL, Key_mouseWarpNW,
-  //  Key_End,  Key_PrintScreen,  Key_Insert,  ___,        Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
-  //  ___, Key_Delete, ___, ___,
-  //  ___,
-
-  //  Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
-  //  Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
-  //                              ___,          Key_LeftArrow,            Key_DownArrow,              Key_UpArrow,  Key_RightArrow,              ___,
-  //  Key_PcApplication,          Key_Mute,               Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
-  //  ___, ___, Key_Enter, ___,
-  //  ___),
-
-
-  [NUMPAD] =  KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
+  [MOUSE] =  KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, XXX,
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___,
    ___,
 
-   M(MACRO_VERSION_INFO),  ___, Key_7, Key_8,      Key_9,              Key_KeypadSubtract, ___,
-   ___,                    ___, Key_4, Key_5,      Key_6,              Key_KeypadAdd,      ___,
-                           ___, Key_1, Key_2,      Key_3,              Key_Equals,         ___,
-   ___,                    ___, Key_0, Key_Period, Key_KeypadMultiply, Key_KeypadDivide,   Key_Enter,
+   ___, ___, ___,           ___,               ___,               ___,        ___,
+   ___, ___, Key_mouseBtnL, Key_mouseBtnM,     Key_mouseBtnR,     ___,        ___,
+        ___, Key_mouseL,    Key_mouseDn,       Key_mouseUp,       Key_mouseR, ___,
+   ___, ___, ___,           Key_mouseScrollUp, Key_mouseScrollDn, ___,        ___,
    ___, ___, ___, ___,
    ___),
 
@@ -511,7 +496,14 @@ KALEIDOSCOPE_INIT_PLUGINS(
   LEDRainbowWaveEffect,
 
   // These static effects turn your keyboard's LEDs a variety of colors
-  &solidOrange, &solidGreen, &solidBlue,
+  solidOrange, solidGreen, solidBlue,
+
+  Macros,
+  MouseKeys,
+  HostPowerManagement,
+  OneShot,
+  ActiveModColorEffect
+)
 
   // The MouseKeys plugin lets you add keys to your keymap which move the mouse.
   MouseKeys,
@@ -554,7 +546,7 @@ void setup() {
     // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
   )
   // Qukeys.setTimeout(250);
-  // Qukeys.setReleaseDelay(5);
+  Qukeys.setReleaseDelay(20);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
