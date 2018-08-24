@@ -164,10 +164,10 @@ enum { PRIMARY, FUNCTION, MOUSE }; // layers
   *
   */
 
-// #define PRIMARY_KEYMAP_QWERTY
+#define PRIMARY_KEYMAP_QWERTY
 // #define PRIMARY_KEYMAP_COLEMAK
 // #define PRIMARY_KEYMAP_DVORAK
-#define PRIMARY_KEYMAP_CUSTOM
+// #define PRIMARY_KEYMAP_CUSTOM
 
 
 
@@ -180,38 +180,68 @@ KEYMAPS(
 
 #if defined (PRIMARY_KEYMAP_QWERTY)
   [PRIMARY] = KEYMAP_STACKED
-  (___,          Key_1, Key_2, Key_3, Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
-   Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
-   Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
-   ShiftToLayer(FUNCTION),
+  (___,           Key_1, Key_2, Key_3, Key_4, Key_5, ___,
+   Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
+   Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
+   Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
+   Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
+   OSL(FUNCTION),
 
-   M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
-   Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
-                  Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
-   Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
+   ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
+   Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
+                  Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
+   Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
+   Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
+   OSL(FUNCTION)),
+
+  [FUNCTION] =  KEYMAP_STACKED
+  (___, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
+   ___, ___,                        ___,      LSHIFT(Key_Minus),       LSHIFT(Key_Equals),         ___,                      ___,
+   ___, ___,                        ___,      Key_Minus,               Key_Equals,                 Consumer_VolumeIncrement,
+   ___, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
+   ___, ___, ___, ___,
+   ___,
+
+   ___, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
+   ___, ___,        LSHIFT(Key_9), LSHIFT(Key_0),          ___,            ___,            Key_F12,
+        ___,        Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
+   ___, ___,        ___,           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,     
+   ___, ___, ___, ___,
+   ___),
 
 #elif defined (PRIMARY_KEYMAP_DVORAK)
 
   [PRIMARY] = KEYMAP_STACKED
-  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_Tab,
-   Key_PageUp,   Key_A,         Key_O,     Key_E,      Key_U, Key_I,
-   Key_PageDown, Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
-   ShiftToLayer(FUNCTION),
+  (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, ___,
+   Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, Key_Delete,
+   Key_Backslash, Key_A,            Key_O,      Key_E,      Key_U, Key_I,
+   Key_Pipe,      Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
+   Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
+   OSL(FUNCTION),
 
-   M(MACRO_ANY),   Key_6, Key_7, Key_8, Key_9, Key_0, LockLayer(NUMPAD),
-   Key_Enter,      Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
-                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
-   Key_RightAlt,   Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
+   ___,           Key_6, Key_7, Key_8, Key_9, Key_0, ___,
+   Key_Backspace, Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
+                  Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
+   Key_Enter,     Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
+   Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
+   OSL(FUNCTION)),
 
-#elif defined (PRIMARY_KEYMAP_COLEMAK)
+  [FUNCTION] =  KEYMAP_STACKED
+  (___, Key_F1,                     Key_F2,        Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
+   ___, ___,                        ___,           Key_LeftCurlyBracket,    Key_RightCurlyBracket,      ___,                      ___,
+   ___, ___,                        ___,           Key_LeftBracket,         Key_RightBracket,           Consumer_VolumeIncrement,
+   ___, Consumer_ScanPreviousTrack, Key_Mute,      Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
+   ___, ___, ___, ___,
+   ___,
+
+   ___, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
+   ___, ___,        LSHIFT(Key_9), LSHIFT(Key_0),          ___,            ___,            Key_F12,
+        ___,        Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
+   ___, ___,        ___,           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,     
+   ___, ___, ___, ___,
+   ___),
+
+#elif defined (PRIMARY_KEYMAP_COLEMAK) 
 
   [PRIMARY] = KEYMAP_STACKED
   (___,          Key_1, Key_2, Key_3, Key_4, Key_5, Key_LEDEffectNext,
@@ -230,44 +260,14 @@ KEYMAPS(
 
 #elif defined (PRIMARY_KEYMAP_CUSTOM)
 
-  [PRIMARY] = KEYMAP_STACKED
-  (___,           Key_1,            Key_2,      Key_3,      Key_4, Key_5, ___,
-   Key_Backtick,  Key_Quote,        Key_Comma,  Key_Period, Key_P, Key_Y, Key_Delete,
-   Key_Backslash, Key_A,            Key_O,      Key_E,      Key_U, Key_I,
-   Key_Pipe,      Key_Semicolon,    Key_Q,      Key_J,      Key_K, Key_X, Key_Enter,
-   Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
-   OSL(FUNCTION),
 
-   ___,           Key_6, Key_7, Key_8, Key_9, Key_0, ___,
-   Key_Backspace, Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
-                  Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
-   Key_Enter,     Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
-   OSL(FUNCTION)),
-
-
-#else
+#else 
 
 #error "No default keymap defined. You should make sure that you have a line like '#define PRIMARY_KEYMAP_QWERTY' in your sketch"
 
-#endif
+#endif 
 
 
-
-  [FUNCTION] =  KEYMAP_STACKED
-  (___, Key_F1,                     Key_F2,        Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
-   ___, ___,                        ___,           Key_LeftCurlyBracket,    Key_RightCurlyBracket,      ___,                      ___,
-   ___, ___,                        ___,           Key_LeftBracket,         Key_RightBracket,           Consumer_VolumeIncrement,
-   ___, Consumer_ScanPreviousTrack, Key_Mute,      Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
-   ___, ___, ___, ___,
-   ___,
-
-   ___, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
-   ___, ___,        LSHIFT(Key_9), LSHIFT(Key_0),          ___,            ___,            Key_F12,
-        ___,        Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
-   ___, ___,        ___,           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,     
-   ___, ___, ___, ___,
-   ___),
 
   [MOUSE] =  KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, XXX,
