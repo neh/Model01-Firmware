@@ -522,8 +522,8 @@ void setup() {
     // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
     // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
   )
-  Qukeys.setTimeout(250);
-  Qukeys.setReleaseDelay(10);
+  Qukeys.setTimeout(200);
+  Qukeys.setReleaseDelay(15);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
