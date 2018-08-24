@@ -516,8 +516,8 @@ void setup() {
     kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
     kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
 
-    kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
-    kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
+    // kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
+    // kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
     // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
     // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
