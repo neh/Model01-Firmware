@@ -145,7 +145,7 @@ enum { MACRO_VERSION_INFO,
   * the numbers 0, 1 and 2.
   */
 
-enum { PRIMARY, FUNCTION, MOUSE }; // layers
+enum { PRIMARY, FUNCTION, LOWER, MOUSE }; // layers
 
 
 /**
@@ -177,14 +177,16 @@ KEYMAPS(
 
 #if defined (PRIMARY_KEYMAP_QWERTY)
   [PRIMARY] = KEYMAP_STACKED
-  (___,           Key_1, Key_2, Key_3, Key_4, Key_5, ___,
+  // (___,           Key_1, Key_2, Key_3, Key_4, Key_5, ___,
+  (___,           ___,   LSHIFT(Key_Minus), Key_Minus, LSHIFT(Key_9), ___, ___,
    Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
    Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
    Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
-   OSL(FUNCTION),
+   OSL(LOWER),
 
-   ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
+   // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
+   ___,           ___,   LSHIFT(Key_0), Key_Equals, LSHIFT(Key_Equals), ___, ___,
    Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
                   Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
@@ -264,6 +266,21 @@ KEYMAPS(
 
 #endif 
 
+
+  [LOWER] = KEYMAP_STACKED
+  (___,          ___, ___, ___, ___, ___, ___,
+   ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
+   ___, Key_1,   Key_2, Key_3, Key_4, Key_5,
+   Key_F12, Key_F1, Key_F2, Key_F3, Key_F4, Key_F5, ___,
+   ___, ___, ___, ___,
+   ___,
+
+   ___,  ___, ___, ___,     ___,         ___,         ___,
+   ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8),     LSHIFT(Key_9),         LSHIFT(Key_0), ___,
+         Key_6, Key_7, Key_8,     Key_9,         Key_0,         ___,
+   ___,  Key_F6, Key_F7, Key_F8, Key_F9,    Key_F10,     Key_F11,
+   ___, ___, ___, ___,
+   ___),
 
 
   [MOUSE] =  KEYMAP_STACKED
