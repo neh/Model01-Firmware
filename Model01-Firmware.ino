@@ -539,6 +539,8 @@ void setup() {
   Qukeys.setTimeout(200);
   Qukeys.setReleaseDelay(15);
 
+  ActiveModColorEffect.highlight_color = CRGB(0x00, 0xee, 0x00);
+
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
   LEDRainbowEffect.brightness(150);
