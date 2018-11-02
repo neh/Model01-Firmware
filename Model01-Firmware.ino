@@ -202,7 +202,7 @@ KEYMAPS(
    ___,
 
    ___, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
-   ___, ___,        LSHIFT(Key_9), LSHIFT(Key_0),          ___,            ___,            Key_F12,
+   ___, Key_mouseBtnL, Key_mouseL, Key_mouseDn, Key_mouseUp, Key_mouseR,            Key_mouseBtnR,
         ___,        Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
    ___, ___,        ___,           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,     
    ___, ___, ___, ___,
