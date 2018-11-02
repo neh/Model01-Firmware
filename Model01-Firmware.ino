@@ -182,7 +182,7 @@ KEYMAPS(
    Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
    Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
-   Key_Tab, Key_LeftShift, Key_Escape, Key_LeftAlt,
+   Key_Tab, OSM(LeftShift), Key_Escape, OSM(LeftAlt),
    OSL(LOWER),
 
    // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
@@ -190,7 +190,7 @@ KEYMAPS(
    Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
                   Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
-   Key_RightAlt,  Key_Backspace, Key_Spacebar, Key_Tab,
+   OSM(RightAlt),  Key_Backspace, Key_Spacebar, Key_Tab,
    OSL(FUNCTION)),
 
   [FUNCTION] =  KEYMAP_STACKED
