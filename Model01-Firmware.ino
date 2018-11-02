@@ -195,8 +195,8 @@ KEYMAPS(
 
   [FUNCTION] =  KEYMAP_STACKED
   (___, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
-   ___, ___,                        ___,      LSHIFT(Key_Minus),       LSHIFT(Key_Equals),         ___,                      ___,
-   ___, ___,                        ___,      Key_Minus,               Key_Equals,                 Consumer_VolumeIncrement,
+   ___, ___,                        ___,      ___,                     ___,         ___,                      ___,
+   ___, ___,                        ___,      ___,                     ___,                 Consumer_VolumeIncrement,
    ___, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
    ___, ___, ___, ___,
    ___,
