@@ -77,7 +77,7 @@
 // #include "Kaleidoscope-Escape-OneShot.h"
 #include "Kaleidoscope-LED-ActiveModColor.h"
 
-// #include <Kaleidoscope-Qukeys.h>
+#include <Kaleidoscope-Qukeys.h>
 
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
   * The names aren't particularly important. What is important is that each
@@ -182,7 +182,7 @@ KEYMAPS(
    Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
    Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
-   Key_Tab, OSM(LeftShift), OSM(LeftControl), OSM(LeftAlt),
+   Key_Tab, OSM(LeftShift), Key_LeftControl, OSM(LeftAlt),
    OSL(LOWER),
 
    // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
@@ -190,7 +190,7 @@ KEYMAPS(
    Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
                   Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
-   OSM(RightAlt),  Key_Escape, Key_Spacebar, OSM(RightGui),
+   OSM(RightAlt),  Key_Escape, Key_Spacebar, Key_Tab,
    OSL(FUNCTION)),
 
   [FUNCTION] =  KEYMAP_STACKED
@@ -523,21 +523,21 @@ void setup() {
   // First, call Kaleidoscope's internal setup function
   Kaleidoscope.setup();
 
-  // QUKEYS(
-    // kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
-    // kaleidoscope::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
+  QUKEYS(
+    kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
+    kaleidoscope::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
 
-    // kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
-    // kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
+    kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
+    kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
 
     // kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
     // kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
     // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
     // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
-  // )
-  // Qukeys.setTimeout(200);
-  // Qukeys.setReleaseDelay(15);
+  )
+  Qukeys.setTimeout(200);
+  Qukeys.setReleaseDelay(15);
 
   ActiveModColorEffect.highlight_color = CRGB(0x00, 0xee, 0x00);
 
