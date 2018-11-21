@@ -182,7 +182,7 @@ KEYMAPS(
    Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
    Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
-   Key_Tab, OSM(LeftShift), Key_LeftControl, OSM(LeftAlt),
+   Key_Tab, OSM(LeftShift), Key_Escape, OSM(LeftAlt),
    OSL(LOWER),
 
    // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
