@@ -182,16 +182,16 @@ KEYMAPS(
    Key_Backtick,  Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Delete,
    Key_Backslash, Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_Pipe,      Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Enter,
-   Key_Tab, OSM(LeftShift), Key_Escape, OSM(LeftAlt),
-   OSL(LOWER),
+   OSL(LOWER), OSM(LeftShift), Key_Escape, OSM(LeftAlt),
+   Key_Tab,
 
    // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
    ___,           ___,   LSHIFT(Key_Minus), LSHIFT(Key_Equals), ___, ___, ___,
    Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
                   Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
-   OSM(RightAlt),  Key_Escape, Key_Spacebar, Key_Tab,
-   OSL(FUNCTION)),
+   OSM(RightAlt),  Key_Escape, Key_Spacebar, OSL(FUNCTION),
+   Key_Tab),
 
   [FUNCTION] =  KEYMAP_STACKED
   (___, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
@@ -527,8 +527,10 @@ void setup() {
     kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
     kaleidoscope::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
 
-    kaleidoscope::Qukey(0, 0, 7, Key_LeftGui),
-    kaleidoscope::Qukey(0, 0, 8, Key_RightGui),
+    // kaleidoscope::Qukey(0, 0, 7, Key_LeftGui), // left inner thumb key
+    // kaleidoscope::Qukey(0, 0, 8, Key_RightGui), // right inner thumb key
+    kaleidoscope::Qukey(0, 3, 6, Key_LeftGui), // left palm key
+    kaleidoscope::Qukey(0, 3, 9, Key_RightGui), // right palm key
 
     // kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
     // kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
