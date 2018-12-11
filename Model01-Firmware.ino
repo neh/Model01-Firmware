@@ -541,6 +541,10 @@ void setup() {
   Qukeys.setTimeout(200);
   Qukeys.setReleaseDelay(15);
 
+  OneShot.time_out = 750;
+  OneShot.disableStickabilityForModifiers();
+  OneShot.disableStickabilityForLayers();
+
   ActiveModColorEffect.highlight_color = CRGB(0x00, 0xee, 0x00);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
