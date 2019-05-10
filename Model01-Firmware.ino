@@ -477,7 +477,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // left Fn button at the same time.
   HardwareTestMode,
 
-  &Qukeys,
+  Qukeys,
 
   // LEDControl provides support for other LED modes
   LEDControl,
@@ -523,19 +523,19 @@ void setup() {
   Kaleidoscope.setup();
 
   QUKEYS(
-    kaleidoscope::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
-    kaleidoscope::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
+    kaleidoscope::plugin::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
+    kaleidoscope::plugin::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
 
-    // kaleidoscope::Qukey(0, 0, 7, Key_LeftGui), // left inner thumb key
-    // kaleidoscope::Qukey(0, 0, 8, Key_RightGui), // right inner thumb key
-    kaleidoscope::Qukey(0, 3, 6, Key_LeftGui), // left palm key
-    kaleidoscope::Qukey(0, 3, 9, Key_RightGui), // right palm key
+    // kaleidoscope::plugin::Qukey(0, 0, 7, Key_LeftGui), // left inner thumb key
+    // kaleidoscope::plugin::Qukey(0, 0, 8, Key_RightGui), // right inner thumb key
+    kaleidoscope::plugin::Qukey(0, 3, 6, Key_LeftGui), // left palm key
+    kaleidoscope::plugin::Qukey(0, 3, 9, Key_RightGui), // right palm key
 
-    // kaleidoscope::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
-    // kaleidoscope::Qukey(0, 2, 12, Key_RightControl),       // t/Control
+    // kaleidoscope::plugin::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
+    // kaleidoscope::plugin::Qukey(0, 2, 12, Key_RightControl),       // t/Control
 
-    // kaleidoscope::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
-    // kaleidoscope::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
+    // kaleidoscope::plugin::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
+    // kaleidoscope::plugin::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
   )
   Qukeys.setTimeout(200);
   Qukeys.setReleaseDelay(15);
