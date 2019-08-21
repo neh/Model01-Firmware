@@ -538,19 +538,19 @@ void setup() {
   Kaleidoscope.setup();
 
   QUKEYS(
-    kaleidoscope::plugin::Qukey(0, 2, 7, Key_LeftControl),    // Control/Escape
-    kaleidoscope::plugin::Qukey(0, 2, 8, Key_RightControl),    // Control/Backspace
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),    // Control/Escape
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_RightControl),    // Control/Backspace
 
-    // kaleidoscope::plugin::Qukey(0, 0, 7, Key_LeftGui), // left inner thumb key
-    // kaleidoscope::plugin::Qukey(0, 0, 8, Key_RightGui), // right inner thumb key
-    kaleidoscope::plugin::Qukey(0, 3, 6, Key_LeftGui), // left palm key
-    kaleidoscope::plugin::Qukey(0, 3, 9, Key_RightGui), // right palm key
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), Key_LeftGui), // left inner thumb key
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(0, 8), Key_RightGui), // right inner thumb key
+    kaleidoscope::plugin::Qukey(0, KeyAddr(3, 6), Key_LeftGui), // left palm key
+    kaleidoscope::plugin::Qukey(0, KeyAddr(3, 9), Key_RightGui), // right palm key
 
-    // kaleidoscope::plugin::Qukey(0, 2, 3, Key_LeftControl),       // e/Control
-    // kaleidoscope::plugin::Qukey(0, 2, 12, Key_RightControl),       // t/Control
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),       // e/Control
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_RightControl),       // t/Control
 
-    // kaleidoscope::plugin::Qukey(0, 2, 2, Key_LeftAlt),       // o/Alt
-    // kaleidoscope::plugin::Qukey(0, 2, 13, Key_RightAlt),       // n/Alt
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),       // o/Alt
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_RightAlt),       // n/Alt
   )
   Qukeys.setTimeout(200);
   Qukeys.setReleaseDelay(15);
