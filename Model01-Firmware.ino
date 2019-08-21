@@ -208,18 +208,33 @@ KEYMAPS(
    ___, ___, ___, ___,
    ___),
 
+  // [LOWER] = KEYMAP_STACKED
+  // (___,          ___, ___, ___, ___, ___, ___,
+  //  ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
+  //  ___, Key_1,         Key_2,         Key_3,         Key_4,         Key_5,
+  //  ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
+  //  ___, ___, ___, ___,
+  //  ___,
+
+  //  ___,  ___, ___, ___,     ___,         ___,         ___,
+  //  ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+  //        Key_6,         Key_7,         Key_8,         Key_9,         Key_0,         ___,
+  //  ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+  //  ___, ___, ___, ___,
+  //  ___),
+
   [LOWER] = KEYMAP_STACKED
-  (___,          ___, ___, ___, ___, ___, ___,
-   ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
-   ___, Key_1,         Key_2,         Key_3,         Key_4,         Key_5,
-   ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
+  (___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_4), LSHIFT(Key_5), ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___,
    ___,
 
-   ___,  ___, ___, ___,     ___,         ___,         ___,
    ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
-         Key_6,         Key_7,         Key_8,         Key_9,         Key_0,         ___,
-   ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+   ___,  ___,   Key_4, Key_5, Key_6, Key_KeypadAdd, ___,
+         Key_0, Key_1, Key_2, Key_3, Key_E, ___,
+   ___,  ___,   Key_7, Key_8, Key_9, Key_RightBracket, ___,
    ___, ___, ___, ___,
    ___),
 
