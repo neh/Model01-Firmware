@@ -93,7 +93,8 @@
   */
 
 enum { MACRO_VERSION_INFO,
-       MACRO_ANY
+       MACRO_ANY,
+       MACRO_TOGGLE_QUKEYS
      };
 
 
@@ -186,7 +187,7 @@ KEYMAPS(
    Key_Tab,
 
    // ___,           Key_6, Key_7, Key_8,     Key_9,      Key_0,         ___,
-   ___,           ___,   LSHIFT(Key_Minus), LSHIFT(Key_Equals), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+   M(MACRO_TOGGLE_QUKEYS), ___, LSHIFT(Key_Minus), LSHIFT(Key_Equals), LSHIFT(Key_9), LSHIFT(Key_0), ___,
    Key_Backspace, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
                   Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
    Key_Enter,     Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_RightBracket,
@@ -371,7 +372,13 @@ const macro_t *macroAction(uint8_t macroIndex, uint8_t keyState) {
   case MACRO_ANY:
     anyKeyMacro(keyState);
     break;
+
+  case MACRO_TOGGLE_QUKEYS:
+    if (keyToggledOn(keyState))
+      Qukeys.toggle();
+    break;
   }
+
   return MACRO_NONE;
 }
 
