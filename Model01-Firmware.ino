@@ -466,6 +466,8 @@ USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
 // The order can be important. For example, LED effects are
 // added in the order they're listed here.
 KALEIDOSCOPE_INIT_PLUGINS(
+  Qukeys,
+
   // The EEPROMSettings & EEPROMKeymap plugins make it possible to have an
   // editable keymap in EEPROM.
   EEPROMSettings,
@@ -491,8 +493,6 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // The hardware test mode, which can be invoked by tapping Prog, LED and the
   // left Fn button at the same time.
   HardwareTestMode,
-
-  Qukeys,
 
   // LEDControl provides support for other LED modes
   LEDControl,
@@ -557,6 +557,7 @@ void setup() {
   )
   // Qukeys.setTimeout(200);
   // Qukeys.setReleaseDelay(15);
+  Qukeys.setOverlapThreshold(95);
 
   OneShot.time_out = 750;
   OneShot.disableStickabilityForModifiers();
