@@ -233,7 +233,7 @@ KEYMAPS(
 
    ___,  LSHIFT(Key_6), LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
    ___,  ___,   Key_4, Key_5, Key_6, Key_KeypadAdd, ___,
-         Key_0, Key_1, Key_2, Key_3, Key_E, ___,
+         Key_E, Key_1, Key_2, Key_3, Key_0, ___,
    ___,  ___,   Key_7, Key_8, Key_9, Key_RightBracket, ___,
    ___, ___, ___, ___,
    ___),
