@@ -557,7 +557,7 @@ void setup() {
   )
   // Qukeys.setTimeout(200);
   // Qukeys.setReleaseDelay(15);
-  Qukeys.setOverlapThreshold(95);
+  Qukeys.setOverlapThreshold(100);
 
   OneShot.time_out = 750;
   OneShot.disableStickabilityForModifiers();
