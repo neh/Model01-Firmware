@@ -553,17 +553,16 @@ void setup() {
     kaleidoscope::plugin::Qukey(0, KeyAddr(3, 6), Key_LeftGui), // left palm key
     kaleidoscope::plugin::Qukey(0, KeyAddr(3, 9), Key_RightGui), // right palm key
 
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),       // e/Control
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_RightControl),       // t/Control
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),       // e/Control
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_RightControl),       // t/Control
 
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),       // o/Alt
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_RightAlt),       // n/Alt
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),       // o/Alt
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_RightAlt),       // n/Alt
 
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),       // u/Shift
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_RightShift),       // h/Shift
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),       // u/Shift
+    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_RightShift),       // h/Shift
   )
-  // Qukeys.setTimeout(200);
-  // Qukeys.setReleaseDelay(15);
+  // Qukeys.setHoldTimeout(300);
   Qukeys.setOverlapThreshold(100);
 
   OneShot.time_out = 750;
