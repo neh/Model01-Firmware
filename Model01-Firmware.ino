@@ -162,7 +162,8 @@ enum { PRIMARY, FUNCTION, LOWER, MOUSE }; // layers
   *
   */
 
-#define PRIMARY_KEYMAP_QWERTY
+// #define PRIMARY_KEYMAP_QWERTY
+#define PRIMARY_KEYMAP_NEH
 // #define PRIMARY_KEYMAP_COLEMAK
 // #define PRIMARY_KEYMAP_DVORAK
 // #define PRIMARY_KEYMAP_CUSTOM
@@ -238,6 +239,52 @@ KEYMAPS(
    ___,  ___,   Key_7, Key_8, Key_9, Key_RightBracket, ___,
    ___, ___, ___, ___,
    ___),
+
+#elif defined (PRIMARY_KEYMAP_NEH)
+  [PRIMARY] = KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   XXX, Key_Q, Key_W, Key_E, Key_R, Key_T, XXX,
+   XXX, Key_A, Key_S, Key_D, Key_F, Key_G,
+   XXX, Key_Z, Key_X, Key_C, Key_V, Key_B, XXX,
+   Key_Enter, OSM(LeftShift), Key_Escape, XXX,
+   XXX,
+
+   M(MACRO_TOGGLE_QUKEYS), ___, ___, ___, ___, ___, ___,
+   XXX, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         XXX,
+        Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, XXX,
+   XXX, Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     XXX,
+   XXX, Key_Backspace, Key_Spacebar, Key_Tab,
+   XXX),
+
+  [FUNCTION] =  KEYMAP_STACKED
+  (___, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
+   ___, ___,                        ___,      ___,                     ___,         ___,                      ___,
+   ___, ___,                        ___,      ___,                     ___,                 Consumer_VolumeIncrement,
+   ___, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
+   ___, ___, ___, ___,
+   ___,
+
+   XXX, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
+   XXX, Key_mouseBtnL, Key_mouseL, Key_mouseDn, Key_mouseUp, Key_mouseR,            Key_F12,
+        Key_mouseBtnR, Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
+   XXX, ___,        LGUI(Key_Tab),           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,
+   XXX, Key_Delete, ___, ___,
+   XXX),
+
+  [LOWER] = KEYMAP_STACKED
+  (XXX, XXX, XXX, XXX, XXX, XXX, XXX,
+   XXX, LSHIFT(Key_2), LSHIFT(Key_Equals), Key_Equals,    LSHIFT(Key_0), Key_Backslash, XXX,
+   XXX, LSHIFT(Key_1), LSHIFT(Key_Minus),  Key_Minus,     LSHIFT(Key_9), Key_LeftBracket,
+   XXX, LSHIFT(Key_3), LSHIFT(Key_6),      LSHIFT(Key_5), LSHIFT(Key_4), LSHIFT(Key_Backslash), XXX,
+   LSHIFT(Key_Quote), Key_Quote, Key_Backtick, XXX,
+   XXX,
+
+   XXX, XXX, XXX, XXX, XXX, XXX, XXX,
+   XXX, LSHIFT(Key_Backtick), Key_4, Key_5, Key_6, Key_RightBracket, XXX,
+        LSHIFT(Key_8),        Key_1, Key_2, Key_3, Key_0, XXX,
+   XXX, LSHIFT(Key_7),        Key_7, Key_8, Key_9, Key_KeypadAdd, XXX,
+   XXX, XXX, ___, XXX,
+   XXX),
 
 #elif defined (PRIMARY_KEYMAP_DVORAK)
 
@@ -544,24 +591,23 @@ void setup() {
   // First, call Kaleidoscope's internal setup function
   Kaleidoscope.setup();
 
+#if defined (PRIMARY_KEYMAP_QWERTY)
   QUKEYS(
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),    // Control/Escape
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_RightControl),    // Control/Backspace
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),  // Control/Escape
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_RightControl), // Control/Backspace
 
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), Key_LeftGui), // left inner thumb key
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(0, 8), Key_RightGui), // right inner thumb key
-    kaleidoscope::plugin::Qukey(0, KeyAddr(3, 6), Key_LeftGui), // left palm key
+    kaleidoscope::plugin::Qukey(0, KeyAddr(3, 6), Key_LeftGui),  // left palm key
     kaleidoscope::plugin::Qukey(0, KeyAddr(3, 9), Key_RightGui), // right palm key
-
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),       // e/Control
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_RightControl),       // t/Control
-
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),       // o/Alt
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_RightAlt),       // n/Alt
-
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),       // u/Shift
-    // kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_RightShift),       // h/Shift
   )
+#elif defined (PRIMARY_KEYMAP_NEH)
+  QUKEYS(
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),         // Control/Escape
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 8), ShiftToLayer(LOWER)),     // Space/LOWER
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_LeftAlt),             // Backspace/Alt
+    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), ShiftToLayer(FUNCTION)),  // Enter/FUNCTION
+    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 8), Key_LeftGui),             // Tab/GUI
+  )
+#endif
   // Qukeys.setHoldTimeout(300);
   Qukeys.setOverlapThreshold(100);
 
