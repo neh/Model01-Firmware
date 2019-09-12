@@ -276,14 +276,16 @@ KEYMAPS(
    XXX, LSHIFT(Key_2), LSHIFT(Key_Equals), Key_Equals,    LSHIFT(Key_0), Key_Backslash, XXX,
    XXX, LSHIFT(Key_1), LSHIFT(Key_Minus),  Key_Minus,     LSHIFT(Key_9), Key_LeftBracket,
    XXX, LSHIFT(Key_3), LSHIFT(Key_6),      LSHIFT(Key_5), LSHIFT(Key_4), LSHIFT(Key_Backslash), XXX,
-   LSHIFT(Key_Quote), Key_Quote, Key_Backtick, XXX,
+   // LSHIFT(Key_Quote), Key_Quote, Key_Backtick, XXX,
+   ___, XXX, XXX, XXX,
    XXX,
 
    XXX, XXX, XXX, XXX, XXX, XXX, XXX,
    XXX, LSHIFT(Key_Backtick), Key_4, Key_5, Key_6, Key_RightBracket, XXX,
         LSHIFT(Key_8),        Key_1, Key_2, Key_3, Key_0, XXX,
    XXX, LSHIFT(Key_7),        Key_7, Key_8, Key_9, Key_KeypadAdd, XXX,
-   XXX, XXX, ___, XXX,
+   // XXX, XXX, ___, XXX,
+   XXX, LSHIFT(Key_Quote), Key_Quote, Key_Backtick,
    XXX),
 
 #elif defined (PRIMARY_KEYMAP_DVORAK)
@@ -602,9 +604,9 @@ void setup() {
 #elif defined (PRIMARY_KEYMAP_NEH)
   QUKEYS(
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),         // Control/Escape
-    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 8), ShiftToLayer(LOWER)),     // Space/LOWER
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 8), ShiftToLayer(FUNCTION)),     // Space/LOWER
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_LeftAlt),             // Backspace/Alt
-    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), ShiftToLayer(FUNCTION)),  // Enter/FUNCTION
+    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), ShiftToLayer(LOWER)),  // Enter/FUNCTION
     kaleidoscope::plugin::Qukey(0, KeyAddr(0, 8), Key_LeftGui),             // Tab/GUI
   )
 #endif
