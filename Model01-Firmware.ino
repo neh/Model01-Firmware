@@ -242,14 +242,14 @@ KEYMAPS(
 
 #elif defined (PRIMARY_KEYMAP_NEH)
   [PRIMARY] = KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
+  (XXX, XXX, XXX, XXX, XXX, XXX, XXX,
    XXX, Key_Q, Key_W, Key_E, Key_R, Key_T, XXX,
    XXX, Key_A, Key_S, Key_D, Key_F, Key_G,
    XXX, Key_Z, Key_X, Key_C, Key_V, Key_B, XXX,
    Key_Enter, OSM(LeftShift), Key_Escape, XXX,
    XXX,
 
-   M(MACRO_TOGGLE_QUKEYS), ___, ___, ___, ___, ___, ___,
+   M(MACRO_TOGGLE_QUKEYS), XXX, XXX, XXX, XXX, XXX, XXX,
    XXX, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         XXX,
         Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, XXX,
    XXX, Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     XXX,
@@ -257,12 +257,12 @@ KEYMAPS(
    XXX),
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
-   ___, ___,                        ___,      ___,                     ___,         ___,                      ___,
-   ___, ___,                        ___,      ___,                     ___,                 Consumer_VolumeIncrement,
-   ___, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, ___,
+  (XXX, Key_F1,                     Key_F2,   Key_F3,                  Key_F4,                     Key_F5,                   Key_LEDEffectNext,
+   XXX, ___,                        ___,      ___,                     ___,         ___,                      XXX,
+   XXX, ___,                        ___,      ___,                     ___,                 Consumer_VolumeIncrement,
+   XXX, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, XXX,
    ___, ___, ___, ___,
-   ___,
+   XXX,
 
    XXX, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
    XXX, Key_mouseBtnL, Key_mouseL, Key_mouseDn, Key_mouseUp, Key_mouseR,            Key_F12,
