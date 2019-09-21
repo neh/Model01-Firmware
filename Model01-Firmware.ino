@@ -253,7 +253,7 @@ KEYMAPS(
    XXX, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         XXX,
         Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, XXX,
    XXX, Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     XXX,
-   XXX, Key_Backspace, Key_Spacebar, Key_Tab,
+   XXX, Key_Backspace, ShiftToLayer(FUNCTION), Key_Tab,
    XXX),
 
   [FUNCTION] =  KEYMAP_STACKED
@@ -603,14 +603,24 @@ void setup() {
   )
 #elif defined (PRIMARY_KEYMAP_NEH)
   QUKEYS(
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 3), Key_LeftControl),         // Control/.
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 12), Key_LeftControl),        // Control/c
+
+    // PRIMARY layer
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 7), Key_LeftControl),         // Control/Escape
-    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 8), ShiftToLayer(FUNCTION)),     // Space/LOWER
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 8), Key_Spacebar),            // Space/LOWER
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 8), Key_LeftAlt),             // Backspace/Alt
-    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), ShiftToLayer(LOWER)),  // Enter/FUNCTION
+    kaleidoscope::plugin::Qukey(0, KeyAddr(0, 7), ShiftToLayer(LOWER)),     // Enter/FUNCTION
     kaleidoscope::plugin::Qukey(0, KeyAddr(0, 8), Key_LeftGui),             // Tab/GUI
+
+    // NUMSYM layer
+    kaleidoscope::plugin::Qukey(2, KeyAddr(2, 3), Key_LeftControl),         // Control/[
+    kaleidoscope::plugin::Qukey(2, KeyAddr(2, 4), Key_LeftShift),           // Shift/(
+    kaleidoscope::plugin::Qukey(2, KeyAddr(2, 11), Key_LeftShift),          // Shift/1
+    kaleidoscope::plugin::Qukey(2, KeyAddr(2, 12), Key_LeftControl),        // Control/2
   )
 #endif
-  // Qukeys.setHoldTimeout(300);
+  // Qukeys.setHoldTimeout(600);
   // Qukeys.setOverlapThreshold(100);
 
   OneShot.time_out = 750;
