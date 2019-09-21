@@ -273,9 +273,9 @@ KEYMAPS(
 
   [LOWER] = KEYMAP_STACKED
   (XXX, XXX, XXX, XXX, XXX, XXX, XXX,
-   XXX, LSHIFT(Key_2), LSHIFT(Key_Equals), Key_Equals,    LSHIFT(Key_0), Key_Backslash, XXX,
-   XXX, LSHIFT(Key_1), LSHIFT(Key_Minus),  Key_Minus,     LSHIFT(Key_9), Key_LeftBracket,
-   XXX, LSHIFT(Key_3), LSHIFT(Key_6),      LSHIFT(Key_5), LSHIFT(Key_4), LSHIFT(Key_Backslash), XXX,
+   XXX, LSHIFT(Key_2), LSHIFT(Key_Equals), Key_Equals,      LSHIFT(Key_0), LSHIFT(Key_6), XXX,
+   XXX, LSHIFT(Key_1), LSHIFT(Key_Minus),  Key_Minus,       LSHIFT(Key_9), LSHIFT(Key_5),
+   XXX, LSHIFT(Key_3), Key_Backslash,      Key_LeftBracket, LSHIFT(Key_4), LSHIFT(Key_Backslash), XXX,
    // LSHIFT(Key_Quote), Key_Quote, Key_Backtick, XXX,
    ___, XXX, XXX, XXX,
    XXX,
