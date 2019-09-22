@@ -261,14 +261,14 @@ KEYMAPS(
    XXX, ___,                        ___,      ___,                     ___,         ___,                      XXX,
    XXX, ___,                        ___,      ___,                     ___,                 Consumer_VolumeIncrement,
    XXX, Consumer_ScanPreviousTrack, Key_Mute, Consumer_PlaySlashPause, Consumer_ScanPreviousTrack, Consumer_VolumeDecrement, XXX,
-   ___, ___, ___, ___,
+   ___, ___, Key_Delete, ___,
    XXX,
 
    XXX, Key_F6,     Key_F7,        Key_F8,                 Key_F9,         Key_F10,        Key_F11,
    XXX, Key_mouseBtnL, Key_mouseL, Key_mouseDn, Key_mouseUp, Key_mouseR,            Key_F12,
         Key_mouseBtnR, Key_LeftArrow, Key_DownArrow,          Key_UpArrow,    Key_RightArrow, ___,
    XXX, ___,        LGUI(Key_Tab),           LCTRL(LSHIFT(Key_Tab)), LCTRL(Key_Tab), ___,            ___,
-   XXX, Key_Delete, ___, ___,
+   XXX, ___, ___, ___,
    XXX),
 
   [LOWER] = KEYMAP_STACKED
