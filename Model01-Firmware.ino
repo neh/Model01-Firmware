@@ -276,7 +276,6 @@ KEYMAPS(
    XXX, LSHIFT(Key_2), LSHIFT(Key_Equals), Key_Equals,      LSHIFT(Key_0), LSHIFT(Key_6), XXX,
    XXX, LSHIFT(Key_1), LSHIFT(Key_Minus),  Key_Minus,       LSHIFT(Key_9), LSHIFT(Key_5),
    XXX, LSHIFT(Key_3), Key_Backslash,      Key_LeftBracket, LSHIFT(Key_4), LSHIFT(Key_Backslash), XXX,
-   // LSHIFT(Key_Quote), Key_Quote, Key_Backtick, XXX,
    ___, XXX, XXX, XXX,
    XXX,
 
@@ -284,7 +283,6 @@ KEYMAPS(
    XXX, LSHIFT(Key_Backtick), Key_4, Key_5, Key_6, Key_RightBracket, XXX,
         LSHIFT(Key_8),        Key_1, Key_2, Key_3, Key_0, XXX,
    XXX, LSHIFT(Key_7),        Key_7, Key_8, Key_9, Key_KeypadAdd, XXX,
-   // XXX, XXX, ___, XXX,
    XXX, LSHIFT(Key_Quote), Key_Quote, Key_Backtick,
    XXX),
 
