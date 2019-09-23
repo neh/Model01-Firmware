@@ -250,7 +250,7 @@ KEYMAPS(
    XXX,
 
    M(MACRO_TOGGLE_QUKEYS), XXX, XXX, XXX, XXX, XXX, XXX,
-   XXX, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         XXX,
+   XXX, Key_Y, Key_U, Key_I,     Key_O,      Key_P,         Key_LeftBracket,
         Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, XXX,
    XXX, Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     XXX,
    XXX, Key_Backspace, ShiftToLayer(FUNCTION), Key_Tab,
